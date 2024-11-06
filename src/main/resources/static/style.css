@@ -1,0 +1,228 @@
+/* Reset CSS */
+* {
+  min-width: 0;
+  font: inherit;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+img,
+video,
+svg {
+  display: block;
+  height: auto;
+  max-width: 1rem;
+}
+
+body {
+  margin: 0;
+  min-height: 100dvh;
+}
+
+h1,
+h2 {
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+/* End Reset CSS */
+
+body {
+  background-color: #f0f4f8;
+  color: #333;
+  font-family: Arial, sans-serif;
+  display: grid;
+  grid-template-rows: 8em auto 8em;
+  /* line-height: 1.6; */
+}
+
+/* Start Header styling */
+header {
+  background-color: #334e68;
+  /* Color más oscuro para mejor contraste */
+  color: #ffffff;
+  padding: 1em 0;
+
+  h1 {
+    text-align: center;
+    font-size: 2.4em;
+    font-weight: bold;
+    /* margin: 0; */
+  }
+
+  nav {
+    /* display: flex;
+    justify-content: center; */
+    margin-top: 0.5em;
+
+    a {
+      color: #ffffff;
+      background-color: #547a92;
+      padding: 0.5em 1em;
+      margin: 0 0.5em;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: background-color .3s ease;
+
+      &:hover {
+        background-color: #98c1d9;
+      }
+    }
+  }
+}
+
+/* End Header styling */
+
+/* Start Main styling */
+main {
+  padding: 1em;
+  display: flex;
+  gap: 1em;
+}
+
+aside {
+  line-height: 1.3rem;
+
+  h2 {
+    font-weight: bold;
+  }
+
+  p::first-letter {
+    font-size: 1.5rem;
+    font-weight: 200;
+  }
+}
+
+table {
+  width: 100%;
+  /* max-width: 800px; */
+  border-collapse: collapse;
+  border: 1px solid #b0bec5;
+  background-color: #ffffff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+  thead,
+  tfoot {
+    background-color: #334e68;
+    color: #ffffff;
+
+    th,
+    td {
+      padding: 12px;
+      border-bottom: 1px solid #b0bec5;
+      text-align: left;
+    }
+  }
+
+  tbody {
+    color: #555;
+  }
+
+  tfoot td {
+    text-align: center;
+  }
+}
+
+/* === Start create styles === */
+form {
+  background-color: #ffffff;
+  padding: 2em;
+  border-radius: 8px;
+  max-width: 500px;
+  margin: 0 auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+  label {
+    display: block;
+    margin-top: 1em;
+    font-weight: bold;
+    color: #333;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  button {
+    width: 100%;
+    padding: 0.8em;
+    margin-top: 0.5em;
+    border: 1px solid #b0bec5;
+    border-radius: 4px;
+    font-size: 1em;
+
+  }
+
+  button {
+    background-color: #547a92;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: #98c1d9;
+    }
+  }
+}
+
+/* === End create styles === */
+
+/* Start Back Button */
+main>a {
+  position: fixed;
+  left: 0;
+  bottom: 10vh;
+  text-decoration: none;
+  padding: 8px;
+  font-size: 3em;
+  border-radius: 0 10px 10px 0;
+  background-color: transparent;
+  transition: background-color .3s ease;
+
+  &:hover {
+    background-color: #334e68;
+  }
+}
+
+/* End Back Button */
+
+/* Start Footer styling */
+footer {
+  background-color: #334e68;
+  color: #ffffff;
+  text-align: center;
+  /* padding: 1em 0; */
+  font-size: .9em;
+
+  nav a {
+    text-decoration: none;
+    color: rgb(204, 204, 204);
+    transition: color .3 ease;
+    /* pa mas tarde | for later */
+
+    &:hover {
+      color: white;
+    }
+  }
+
+  .social-media {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    align-items: center;
+    background-color: #334e68;
+
+    a img {
+      width: 24px;
+      height: auto;
+    }
+  }
+}

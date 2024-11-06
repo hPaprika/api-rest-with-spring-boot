@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Crear Persona</title>
+  <link rel="stylesheet" href="/style.css" />
+  <link rel="shortcut icon" href="/ico/favicon.ico" type="image/x-icon" />
+</head>
+
+<body>
+  <header>
+    <h1>Crear Nueva Persona</h1>
+  </header>
+  <main>
+    <form action="#" th:action="@{/personas/create}" th:object="${persona}" method="post">
+      <label for="nombre">Nombre:</label>
+      <input type="text" id="nombre" th:field="*{nombre}" required />
+      <br />
+      <label for="apellido">Apellido:</label>
+      <input type="text" id="apellido" th:field="*{apellido}" required />
+      <br />
+      <label for="email">Email:</label>
+      <input type="email" id="email" th:field="*{email}" required />
+      <br />
+      <label for="telefono">Teléfono:</label>
+      <input type="text" id="telefono" th:field="*{telefono}" />
+      <br />
+      <button type="submit">Crear</button>
+    </form>
+    <a href="/personas">🔙</a>
+  </main>
+  <footer>
+    <p>&copy; 2024 Registro de Personas. Todos los derechos reservados.</p>
+    <nav>
+      <a href="/contact">Contáctanos</a> |
+      <a href="/terms">Términos y Condiciones</a> |
+      <a href="/privacy">Política de Privacidad</a>
+    </nav>
+    <div>
+      <p>Síguenos en redes sociales:</p>
+      <a href="https://facebook.com">Facebook</a> |
+      <a href="https://twitter.com">Twitter</a> |
+      <a href="https://instagram.com">Instagram</a>
+    </div>
+  </footer>
+</body>
+
+</html>

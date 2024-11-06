@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Listar Personas</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/style.css" />
+  <link rel="shortcut icon" href="/ico/favicon.ico" type="image/x-icon" />
+</head>
+
+<body>
+  <header>
+    <h1>Personas</h1>
+    <nav>
+      <a href="/personas/create">Crear Nueva Persona</a>
+    </nav>
+  </header>
+
+  <main>
+    <aside>
+      <h2><strong>Información Adicional</strong></h2>
+      <p>
+        Bienvenido a la página de administración de personas. Aquí puedes
+        visualizar, editar y gestionar toda la información registrada.
+      </p>
+      <ul>
+        <li>
+          Total de personas registradas:
+          <span th:text="${totalPersonas}">0</span>
+        </li>
+        <li>
+          Personas registradas esta semana:
+          <span th:text="${nuevasPersonasSemana}">0</span>
+        </li>
+      </ul>
+    </aside>
+
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nombre</th>
+          <th>Apellido</th>
+          <th>Email</th>
+          <th>Telefono</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr th:each="persona : ${personas}">
+          <td th:text="${persona.id}"></td>
+          <td th:text="${persona.nombre}"></td>
+          <td th:text="${persona.apellido}"></td>
+          <td th:text="${persona.email}"></td>
+          <td th:text="${persona.telefono}"></td>
+          <td>
+            <a th:href="@{/personas/edit/{id}(id=${persona.id})}"><img src="/svg/edit.svg" alt=""></a>
+            <a th:href="@{/personas/delete/{id}(id=${persona.id})}"><img src="/svg/delete.svg" alt=""></a>
+          </td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="6">lista de personas registradas</td>
+        </tr>
+      </tfoot>
+    </table>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 Registro de Personas. Todos los derechos reservados.</p>
+    <nav>
+      <a href="/contact">Contáctanos</a> |
+      <a href="/terms">Términos y Condiciones</a> |
+      <a href="/privacy">Política de Privacidad</a>
+    </nav>
+    <p>Síguenos en redes sociales:</p>
+    <div class="social-media">
+      <a href="https://facebook.com"><img src="/svg/facebook.svg" alt="Facebook"></a> |
+      <a href="https://twitter.com"><img src="/svg/twitter-x.svg" alt="Twitter"></a> |
+      <a href="https://instagram.com"><img src="/svg/instagram.svg" alt="Instagram"></a>
+    </div>
+  </footer>
+</body>
+
+</html>
